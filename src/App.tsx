@@ -13,12 +13,12 @@ function App() {
       <directionalLight
         position={[3.3, 1.0, 4.4]}
         castShadow
-        intensity={Math.PI * 2}
+        intensity={1.5}
       />
 
-      <HtmlCube />
+      {/* <HtmlCube /> */}
       {/* <AssetModel /> */}
-      {/* <Geometry /> */}
+      <Geometry />
 
       <OrbitControls target={[0, 1, 0]} />
       <axesHelper args={[5]} />
