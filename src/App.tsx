@@ -1,14 +1,15 @@
 import { Canvas } from "@react-three/fiber";
-import { AssetModel } from "./examples/AssetModel";
-import { Geometry } from "./examples/Geometry";
-import { HtmlCube } from "./examples/HtmlCube";
 import { OrbitControls, Stats } from "@react-three/drei"
+import { PhysicsExample } from "./examples/Physics";
+import { Geometry } from "./examples/Geometry";
+import { AssetModel } from "./examples/AssetModel";
+import { HtmlCube } from "./examples/HtmlCube";
 import { Textures } from "./examples/Textures";
 
 
 function App() {
   return (
-    <Canvas shadows>
+    <Canvas shadows dpr={[1, 2]} gl={{ alpha: false }} camera={{ position: [15, 15, 15], fov: 45 }}>
       <color attach="background" args={['#95a5a6']} />
 
       <directionalLight
@@ -17,10 +18,11 @@ function App() {
         intensity={1.5}
       />
 
-      {/* <HtmlCube /> */}
-      {/* <AssetModel /> */}
-      {/* <Geometry /> */}
+      <Geometry />
+      {/* <HtmlCube />
+      <AssetModel />
       <Textures />
+      <PhysicsExample /> */}
 
       <OrbitControls target={[0, 1, 0]} />
       <axesHelper args={[5]} />
