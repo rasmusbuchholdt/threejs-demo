@@ -3,6 +3,7 @@ import { AssetModel } from "./examples/AssetModel";
 import { Geometry } from "./examples/Geometry";
 import { HtmlCube } from "./examples/HtmlCube";
 import { OrbitControls, Stats } from "@react-three/drei"
+import { Textures } from "./examples/Textures";
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
 
       {/* <HtmlCube /> */}
       {/* <AssetModel /> */}
-      <Geometry />
+      {/* <Geometry /> */}
+      <Textures />
 
       <OrbitControls target={[0, 1, 0]} />
       <axesHelper args={[5]} />
