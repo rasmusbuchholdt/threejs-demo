@@ -1,24 +1,22 @@
-import { OrbitControls, Html } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
 import { useState } from "react";
 import { degressToRadians } from "../utils";
 
 export const HtmlCube = () => {
   return (
-    <Canvas camera={{ position: [2, 1, 5], fov: 25 }}>
+    <>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 5]} />
       <pointLight position={[-10, -10, -10]} />
       <Box />
-      <OrbitControls makeDefault />
-    </Canvas>
+    </>
   )
 }
 
 const Box = () => {
   const [size, setSize] = useState(0.5)
   return (
-    <mesh scale={size * 2}>
+    <mesh scale={size * 2} position={[0,1,0]}>
       <boxGeometry />
       <meshStandardMaterial />
       <Html occlude distanceFactor={1.5} position={[0, 0, 0.51]} transform>
